@@ -1,15 +1,16 @@
-import { serve } from "https://deno.land/std@0.106.0/http/server.ts";
+import { serve } from "https://deno.land/std/http/mod.ts";
 
-const server = serve({ port: 8000 });
-
-console.log("Server is running on port 8000");
-
-for await (const req of server) {
-    const { headers } = req;
-    const body = await req.text();
-
-    console.log("Headers:", headers);
-    console.log("Body:", body);
+async function reqHandler(req: Request) {
+  await logHttpRequest(req.clone());
+  const j=await req.json();
+  return new Response(j.a);
 }
 
-//serve((req: Request) => new Response("Hello World"));
+async function logHttpRequest(r:Request) {
+  console.log(new Date()+' New HTTP request');
+  console.log(`${r.method} ${r.url}`);
+  console.log(r.headers);
+  console.log(await r.text());
+}
+
+serve(reqHandler, { port: 8000 });
