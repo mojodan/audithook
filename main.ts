@@ -4,9 +4,9 @@ import { z } from "zod";
 import "https://deno.land/std@0.180.0/dotenv/load.ts";
 import { nanoid } from "nanoid";
 import { trytm } from "trytm";
-import { cleanText } from "./utils.ts";
-import { htmlToText } from "./dom-parse.ts";
-import { sendNotification } from "./ntfy.ts";
+//import { cleanText } from "./utils.ts";
+//import { htmlToText } from "./dom-parse.ts";
+//import { sendNotification } from "./ntfy.ts";
 
 //const ANYSCALE_API_KEY = z.string().parse(Deno.env.get("ANYSCALE_API_KEY"));
 //const AIRTABLE_API_KEY = z.string().parse(Deno.env.get("AIRTABLE_API_KEY"));
