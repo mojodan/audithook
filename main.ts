@@ -114,16 +114,16 @@ app.post("/inbound-email", async (c) => {
   }
 
   // TextBody might be an empty string, if so, use the HTML body
-  const txnAlert = TextBody
-    ? cleanText(TextBody)
-    : cleanText(htmlToText(HtmlBody));
+ // const txnAlert = TextBody
+ //   ? cleanText(TextBody)
+ //   : cleanText(htmlToText(HtmlBody));
 
-  console.log(
-    "Got email from",
-    FromFull.Email,
-    " calling OpenAI with payload:",
-  );
-  console.log(txnAlert);
+ // console.log(
+ //   "Got email from",
+ //   FromFull.Email,
+ //   " calling OpenAI with payload:",
+ // );
+  //console.log(txnAlert);
 
   console.time("llm_completion");
 /*  const chat_completion = await open_ai.chat.completions.create({
