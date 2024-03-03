@@ -8,7 +8,7 @@ Deno.serve(async (req) => {
     console.log("Headers:", req.headers);
   
     if (req.body) {
-      const body = await req.body().value();
+      const body = await req.json();
       console.log("Body:", body);
     }
   
